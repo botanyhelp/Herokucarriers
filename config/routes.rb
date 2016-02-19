@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'carriers/delete'
 
+  get 'carriers/index'
+
   resources :scaffolds
 
   resources :carriers
