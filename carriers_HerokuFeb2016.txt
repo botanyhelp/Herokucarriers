@@ -1,0 +1,337 @@
+user@Microuser:~$ cd carriers
+user@Microuser:~/carriers$ ls
+app  config     db       Gemfile.lock         lib  public    README.rdoc  tmp
+bin  config.ru  Gemfile  GemfileOLDRUBYworks  log  Rakefile  test         vendor
+user@Microuser:~/carriers$ ls -al
+total 79
+drwxr-xr-x  13 root    root       528 Feb 19 21:22 .
+drwxr-xr-x 254 user user  51928 Feb 19 21:31 ..
+drwxr-xr-x   8 root    root       200 Oct 18  2014 app
+drwxr-xr-x   2 root    root       144 Oct 18  2014 bin
+drwxr-xr-x   5 root    root       360 Oct 18  2014 config
+-rw-r--r--   1 root    root       154 Oct 18  2014 config.ru
+drwxrwxr-x   3 root    postgres   128 Oct 18  2014 db
+-rw-r--r--   1 root    root      1455 Feb 19 21:22 Gemfile
+-rw-r--r--   1 root    root      3072 Oct 19  2014 Gemfile.lock
+-rw-r--r--   1 root    root      1442 Feb 19 21:22 GemfileOLDRUBYworks
+drwxr-xr-x   8 root    root       328 Feb 19 21:23 .git
+-rw-r--r--   1 root    root       466 Oct 18  2014 .gitignore
+drwxr-xr-x   4 root    root        96 Oct 18  2014 lib
+drwxr-xr-x   2 root    root       104 Oct 18  2014 log
+drwxr-xr-x   2 root    root       184 Oct 18  2014 public
+-rw-r--r--   1 root    root       249 Oct 18  2014 Rakefile
+-rw-r--r--   1 root    root       478 Oct 18  2014 README.rdoc
+drwxr-xr-x   8 root    root       240 Oct 18  2014 test
+drwxrwxr-x   6 root    postgres   144 Oct 18  2014 tmp
+drwxr-xr-x   3 root    root        72 Oct 18  2014 vendor
+user@Microuser:~/carriers$ ls
+app  config     db       Gemfile.lock         lib  public    README.rdoc  tmp
+bin  config.ru  Gemfile  GemfileOLDRUBYworks  log  Rakefile  test         vendor
+user@Microuser:~/carriers$ ls a-l
+ls: cannot access a-l: No such file or directory
+user@Microuser:~/carriers$ ls -al 
+total 79
+drwxr-xr-x  13 user user   528 Feb 19 21:22 .
+drwxr-xr-x 254 user user 51928 Feb 19 21:31 ..
+drwxr-xr-x   8 user user   200 Oct 18  2014 app
+drwxr-xr-x   2 user user   144 Oct 18  2014 bin
+drwxr-xr-x   5 user user   360 Oct 18  2014 config
+-rw-r--r--   1 user user   154 Oct 18  2014 config.ru
+drwxrwxr-x   3 user user   128 Oct 18  2014 db
+-rw-r--r--   1 user user  1455 Feb 19 21:22 Gemfile
+-rw-r--r--   1 user user  3072 Oct 19  2014 Gemfile.lock
+-rw-r--r--   1 user user  1442 Feb 19 21:22 GemfileOLDRUBYworks
+drwxr-xr-x   8 user user   328 Feb 19 21:23 .git
+-rw-r--r--   1 user user   466 Oct 18  2014 .gitignore
+drwxr-xr-x   4 user user    96 Oct 18  2014 lib
+drwxr-xr-x   2 user user   104 Oct 18  2014 log
+drwxr-xr-x   2 user user   184 Oct 18  2014 public
+-rw-r--r--   1 user user   249 Oct 18  2014 Rakefile
+-rw-r--r--   1 user user   478 Oct 18  2014 README.rdoc
+drwxr-xr-x   8 user user   240 Oct 18  2014 test
+drwxrwxr-x   6 user user   144 Oct 18  2014 tmp
+drwxr-xr-x   3 user user    72 Oct 18  2014 vendor
+user@Microuser:~/carriers$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	GemfileOLDRUBYworks
+nothing added to commit but untracked files present (use "git add" to track)
+user@Microuser:~/carriers$ git add GemfileOLDRUBYworks
+user@Microuser:~/carriers$ git commit
+[master c00a3f5] old file that worked is in GemfileOLDRUBYworks but uses old ruby being ended on heroku on feb242016
+ 1 file changed, 43 insertions(+)
+ create mode 100644 GemfileOLDRUBYworks
+user@Microuser:~/carriers$ heroku login
+Enter your Heroku credentials.
+Email: botanyhelp@gmail.com
+Password (typing will be hidden): 
+Authentication successful.
+user@Microuser:~/carriers$ git push heroku master
+To git@heroku.com:aqueous-bayou-3129.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@heroku.com:aqueous-bayou-3129.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user@Microuser:~/carriers$ cd ../carriersAgain
+bash: cd: ../carriersAgain: No such file or directory
+user@Microuser:~/carriers$ mkdir !$
+mkdir ../carriersAgain
+user@Microuser:~/carriers$ cd !$
+cd ../carriersAgain
+user@Microuser:~/carriersAgain$ git pull heroku master
+fatal: Not a git repository (or any parent up to mount point /home)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+user@Microuser:~/carriersAgain$ cd ../carriers
+user@Microuser:~/carriers$ git pull heroku master
+remote: Counting objects: 47, done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 31 (delta 19), reused 0 (delta 0)
+Unpacking objects: 100% (31/31), done.
+From heroku.com:aqueous-bayou-3129
+ * branch            master     -> FETCH_HEAD
+Auto-merging Gemfile
+Merge made by the 'recursive' strategy.
+ .gitignore                             |    1 +
+ Gemfile                                |    1 +
+ Gemfile.lock                           |    7 +
+ Procfile                               |    1 +
+ app/views/carriers/index.html.erb      |    2 +
+ app/views/layouts/application.html.erb |  400 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ config/environments/production.rb      |    4 +-
+ config/routes.rb                       |    2 +
+ config/secrets.yml                     |    4 +-
+ config/unicorn.rb                      |   22 +++
+ 10 files changed, 441 insertions(+), 3 deletions(-)
+ create mode 100644 Procfile
+ create mode 100644 app/views/carriers/index.html.erb
+ create mode 100644 config/unicorn.rb
+user@Microuser:~/carriers$ vim Gemfile
+user@Microuser:~/carriers$ git status
+# On branch master
+nothing to commit (working directory clean)
+user@Microuser:~/carriers$ git push heroku master
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.05 KiB, done.
+Total 9 (delta 6), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: !	Cedar-10 is deprecated. Please update to Cedar-14: https://devcenter.heroku.com/articles/cedar-14-migration
+remote: 
+To git@heroku.com:aqueous-bayou-3129.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'git@heroku.com:aqueous-bayou-3129.git'
+user@Microuser:~/carriers$ heroku stack:set cedar-14 -a aqueous-bayou-3129
+ !    `stack:set` is not a heroku command.
+ !    See `heroku help` for a list of available commands.
+user@Microuser:~/carriers$ heroku help
+Usage: heroku COMMAND [--app APP] [command-specific-options]
+
+Primary help topics, type "heroku help TOPIC" for more details:
+
+  addons    #  manage addon resources
+  apps      #  manage apps (create, destroy)
+  auth      #  authentication (login, logout)
+  config    #  manage app config vars
+  domains   #  manage custom domains
+  logs      #  display logs for an app
+  ps        #  manage dynos (dynos, workers)
+  releases  #  manage app releases
+  run       #  run one-off commands (console, rake)
+  sharing   #  manage collaborators on an app
+
+Additional topics:
+
+  certs        #  manage ssl endpoints for an app
+  drains       #  display syslog drains for an app
+  fork         #  clone an existing app
+  git          #  manage git for apps
+  help         #  list commands and display help
+  keys         #  manage authentication keys
+  labs         #  manage optional features
+  maintenance  #  manage maintenance mode for an app
+  members      #  manage membership in organization accounts
+  orgs         #  manage organization accounts
+  pg           #  manage heroku-postgresql databases
+  pgbackups    #  manage backups of heroku postgresql databases
+  plugins      #  manage plugins to the heroku gem
+  regions      #  list available regions
+  stack        #  manage the stack for an app
+  status       #  check status of heroku platform
+  twofactor    # 
+  update       #  update the heroku client
+  version      #  display version
+
+user@Microuser:~/carriers$ heroku update
+ !    To update this version of the Heroku client please use
+ !    `apt-get install heroku-toolbelt`
+user@Microuser:~/carriers$ heroku logout
+Local credentials cleared.
+user@Microuser:~/carriers$ heroku version
+heroku-toolbelt/3.22.1 (i486-linux) ruby/1.9.3
+updating...done. Updated to 3.42.36
+user@Microuser:~/carriers$ heroku login
+Enter your Heroku credentials.
+Email: botanyhelp@gmail.com
+Password (typing will be hidden): 
+Authentication successful.
+user@Microuser:~/carriers$ heroku stack:set cedar-14 -a aqueous-bayou-3129
+Stack set. Next release on aqueous-bayou-3129 will use cedar-14.
+Run `git push heroku master` to create a new release on cedar-14.
+user@Microuser:~/carriers$ git push heroku master
+Warning: Permanently added the RSA host key for IP address '50.19.85.132' to the list of known hosts.
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.05 KiB, done.
+Total 9 (delta 6), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.2.4
+remote: -----> Installing dependencies using bundler 1.9.7
+remote:        Purging Cache. Changing stack from cedar to cedar-14
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Fetching gem metadata from https://rubygems.org/...........
+remote:        Fetching version metadata from https://rubygems.org/...
+remote:        Fetching dependency metadata from https://rubygems.org/..
+remote:        Using json 1.8.1
+remote:        Installing minitest 5.4.2
+remote:        Installing i18n 0.6.11
+remote:        Installing rake 10.3.2
+remote:        Installing thread_safe 0.3.4
+remote:        Installing builder 3.2.2
+remote:        Installing erubis 2.7.0
+remote:        Installing rack 1.5.2
+remote:        Installing arel 5.0.1.20140414130214
+remote:        Installing mime-types 2.4.2
+remote:        Installing coffee-script-source 1.8.0
+remote:        Installing execjs 2.2.2
+remote:        Installing hike 1.2.3
+remote:        Installing multi_json 1.10.1
+remote:        Installing libv8 3.16.14.7
+remote:        Installing thor 0.19.1
+remote:        Using bundler 1.9.7
+remote:        Installing tilt 1.4.1
+remote:        Installing rails_serve_static_assets 0.0.2
+remote:        Installing rails_stdout_logging 0.0.3
+remote:        Installing kgio 2.9.2
+remote:        Installing ref 1.0.5
+remote:        Installing sass 3.2.19
+remote:        Installing rdoc 4.1.2
+remote:        Installing tzinfo 1.2.2
+remote:        Installing rack-test 0.6.2
+remote:        Installing mail 2.6.1
+remote:        Installing coffee-script 2.3.0
+remote:        Installing uglifier 2.5.3
+remote:        Installing sprockets 2.11.0
+remote:        Installing rails_12factor 0.0.3
+remote:        Installing pg 0.17.1
+remote:        Installing sdoc 0.4.1
+remote:        Installing activesupport 4.1.6
+remote:        Installing actionview 4.1.6
+remote:        Installing raindrops 0.13.0
+remote:        Installing activemodel 4.1.6
+remote:        Installing jbuilder 2.2.2
+remote:        Installing actionpack 4.1.6
+remote:        Installing activerecord 4.1.6
+remote:        Installing actionmailer 4.1.6
+remote:        Installing railties 4.1.6
+remote:        Installing sprockets-rails 2.2.0
+remote:        Installing coffee-rails 4.0.1
+remote:        Installing jquery-rails 3.1.2
+remote:        Installing rails 4.1.6
+remote:        Installing sass-rails 4.0.3
+remote:        Installing turbolinks 2.4.0
+remote:        Installing therubyracer 0.12.1
+remote:        Installing unicorn 4.8.3
+remote:        Bundle complete! 14 Gemfile dependencies, 50 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Post-install message from rdoc:
+remote:        Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+remote:        <= 1.8.6 : unsupported
+remote:        = 1.8.7 : gem install rdoc-data; rdoc-data --install
+remote:        = 1.9.1 : gem install rdoc-data; rdoc-data --install
+remote:        >= 1.9.2 : nothing to do! Yay!
+remote:        Bundle completed (36.36s)
+remote:        Cleaning up the bundler cache.
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        Asset precompilation completed (1.68s)
+remote:        Cleaning assets
+remote:        Running: rake assets:clean
+remote: 
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> web
+remote:        Default types for buildpack -> console, rake, worker
+remote: 
+remote: -----> Compressing...
+remote:        Done: 43.3M
+remote: -----> Launching...
+remote:        Released v11
+remote:        https://aqueous-bayou-3129.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To git@heroku.com:aqueous-bayou-3129.git
+   5b4338c..6fd7c9c  master -> master
+user@Microuser:~/carriers$ heroku apps:info
+=== aqueous-bayou-3129
+Addons:        heroku-postgresql:hobby-dev
+Dynos:         1
+Git URL:       https://git.heroku.com/aqueous-bayou-3129.git
+Owner Email:   botanyhelp@gmail.com
+Region:        us
+Repo Size:     3M
+Slug Size:     43M
+Stack:         cedar-14
+Web URL:       https://aqueous-bayou-3129.herokuapp.com/
+Workers:       0
+user@Microuser:~/carriers$ heroku help
+Usage: heroku COMMAND [--app APP] [command-specific-options]
+
+Primary help topics, type "heroku help TOPIC" for more details:
+
+  addons    #  manage addon resources
+  apps      #  manage apps (create, destroy)
+  auth      #  authentication (login, logout)
+  config    #  manage app config vars
+  domains   #  manage custom domains
+  logs      #  display logs for an app
+  ps        #  manage dynos (dynos, workers)
+  releases  #  manage app releases
+  run       #  run one-off commands (console, rake)
+  sharing   #  manage collaborators on an app
+
+Additional topics:
+
+  certs        #  manage ssl endpoints for an app
+  drains       #  display drains for an app
+  features     #  manage optional features
+  fork         #  clone an existing app
+  git          #  manage git for apps
+  help         #  list commands and display help
+  keys         #  manage authentication keys
+  labs         #  manage optional features
+  maintenance  #  manage maintenance mode for an app
+  members      #  manage membership in organization accounts
+  orgs         #  manage organization accounts
+  pg           #  manage heroku-postgresql databases
+  pgbackups    #  manage backups of heroku postgresql databases
+  plugins      #  manage plugins to the heroku gem
+  regions      #  list available regions
+  stack        #  manage the stack for an app
+  status       #  check status of heroku platform
+  twofactor    # 
+  update       #  update the heroku client
+  version      #  display version
+
+
